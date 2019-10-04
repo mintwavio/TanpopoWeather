@@ -1,0 +1,97 @@
+# Created by 
+# /usr/bin/cfgmaker private@localhost
+
+
+### Global Config Options
+
+#  for UNIX
+# WorkDir: /home/http/mrtg
+
+#  for Debian
+WorkDir: /home/kouji/public_html/html/mrtg/
+
+#  or for NT
+# WorkDir: c:\mrtgdata
+
+### Global Defaults
+
+#  to get bits instead of bytes and graphs growing to the right
+Options[_]: growright, noinfo
+
+EnableIPv6: no
+Language:eucjp
+
+######################################################################
+# System: Maya
+# Description: Linux Maya 3.2.0-23-generic #36-Ubuntu SMP Tue Apr 10 20:39:51 UTC 2012 x86_64
+# Contact: Me <me@example.org>
+# Location: Sitting on the Dock of the Bay
+######################################################################
+
+### Interface 2 >> Descr: 'ens3' | Name: 'ens3' | Ip: '192.168.0.' | Eth: '8c-89-a5-01-49-5f' ###
+
+Target[ens3]: #ens3:private@localhost:
+SetEnv[ens3]: MRTG_INT_IP="153.126.132.72" MRTG_INT_DESCR="ens3"
+MaxBytes[ens3]: 125000000
+Title[ens3]: ens3トラフィック
+PageTop[ens3]: <h1>ens3トラフィック</h1>
+
+### CPU Usage ###
+Target[cpu]: .1.3.6.1.4.1.2021.11.50.0&.1.3.6.1.4.1.2021.11.52.0:private@localhost*0.33
+MaxBytes[cpu]: 100
+#Unscaled[cpu]: dwmy
+Options[cpu]: growright, noinfo, nopercent
+YLegend[cpu]: CPU usage(%)
+ShortLegend[cpu]: (%)
+LegendI[cpu]: ユーザ 
+LegendO[cpu]: システム
+Legend1[cpu]: CPU使用率(ユーザ)(%)
+Legend2[cpu]: CPU使用率(システム)(%)
+Title[cpu]: ＣＰＵ使用率
+PageTop[cpu]: <H1>ＣＰＵ使用率</H1>
+
+### CPU Load Average ###
+Target[cpu-load]: .1.3.6.1.4.1.2021.10.1.5.1&.1.3.6.1.4.1.2021.10.1.5.2:private@localhost
+MaxBytes[cpu-load]: 2000  
+#Unscaled[cpu-load]: dwmy 
+Options[cpu-load]: integer, gauge, absolute, withzeroes, growright, noinfo, nopercent
+YLegend[cpu-load]: CPU Load Average           
+ShortLegend[cpu-load]: (%)                    
+LegendI[cpu-load]: 1分間平均                  
+LegendO[cpu-load]: 5分間平均                  
+Legend1[cpu-load]: 1分間平均                  
+Legend2[cpu-load]: 5分間平均                  
+Title[cpu-load]: CPU Load                    
+PageTop[cpu-load]: <H1>CPU Load Average</H1> 
+
+### Memory ###
+Target[mem]: .1.3.6.1.4.1.2021.4.6.0&.1.3.6.1.4.1.2021.4.4.0:private@localhost
+MaxBytes1[mem]: 2041004
+MaxBytes2[mem]: 2097148
+Unscaled[mem]: dwmy
+Options[mem]: gauge, absolute, growright, noinfo
+YLegend[mem]: Mem Free(Bytes)
+ShortLegend[mem]: Bytes
+kilo[mem]: 1024
+kMG[mem]: k,M,G,T,P
+LegendI[mem]: Real
+LegendO[mem]: Swap
+Legend1[mem]: 空き物理メモリ[MBytes]
+Legend2[mem]: 空きスワップメモリ[MBytes]
+Title[mem]: 空きメモリ量
+PageTop[mem]: <H1>空きメモリ量</H1>
+
+### Disk Used ####
+Target[disk]: .1.3.6.1.4.1.2021.9.1.9.1&.1.3.6.1.4.1.2021.9.1.9.2:private@localhost
+MaxBytes[disk]: 100
+Unscaled[disk]: dwmy
+Options[disk]: gauge, absolute, growright, nopercent, noinfo
+YLegend[disk]: Disk Used(%)
+ShortLegend[disk]: (%)
+LegendI[disk]: Disk used 
+LegendO[disk]: Disk used
+Legend1[disk]: Disk used
+Legend2[disk]: Disk used
+Title[disk]: ディスク使用率
+PageTop[disk]: <H1>ディスク使用率</H1>
+

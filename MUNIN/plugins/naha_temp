@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [ "$1" = "autoconf" ]; then
+        echo yes
+        exit 0
+fi
+
+if [ "$1" = "config" ]; then
+
+        echo 'graph_title 1.Temperature of Naha, Okinawa Prefecture'
+        echo 'graph_args --base 1000 -l 0'
+#	echo 'graph_args --lower-limit 0 --upper-limit 70 --rigid'
+        echo 'graph_vlabel Temperature (C)'
+        echo 'graph_scale yes'
+        echo 'graph_category weather_Naha'
+        echo 'graph_info Temperature (C)'
+        echo 'temp.label Temperature (C)'
+        echo 'temp.info MUNIN-EX.php'
+	echo 'temp.draw AREA'
+#	echo 'temp.min 0'
+#	echo 'temp.max 70'
+	echo 'temp.colour FFC2E0'
+        echo 'feelslike.label Feels Like (C)'
+        echo 'feelslike.info MUNIN-EX.php'
+	echo 'feelslike.draw LINE1'
+#	echo 'feelslike.max 70'
+#	echo 'feelslike.min 0'
+	echo 'feelslike.colour 0000FF'
+        # Last, if run with the "config"-parameter, quit here (don't
+        # display any data)
+        exit 0
+fi
+
+
+/home/kouji/public_html/html/AutoTweet/MUNIN/MUNIN-EX.php temp okinawa_prefs.xml

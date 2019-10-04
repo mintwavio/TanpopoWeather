@@ -1,0 +1,25 @@
+SELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/etc/zabbix/externalscripts/
+MAILTO=""
+
+# m h dom mon dow user	command
+11,41 * * * *    root `php WeatherOutput.php 35.6558513 139.7465925 toshin_prefs.xml`
+12,42 * * * *    root `php WeatherOutput.php 38.2680128 140.8672388 sendai_prefs.xml`
+13,43 * * * *    root `php WeatherOutput.php 34.4550144 136.7236043 ise_prefs.xml`
+14,44 * * * *    root `php WeatherOutput.php 26.2123001 127.6770291 okinawa_prefs.xml`
+16,46 * * * *    root `php WeatherOutput.php 43.1713704 141.3133270 ishikari_prefs.xml`
+17,47 * * * *    root `php WeatherOutput.php 31.5967748 130.5550182 kagoshima_prefs.xml`
+18,48 * * * *    root `php WeatherOutput.php 36.6473849 138.1945737 nagano_prefs.xml`
+19,49 * * * *    root `php WeatherOutput.php 36.0316258 139.5320353 kitamoto_prefs.xml`
+21,51 * * * *    root `php WeatherOutput.php 35.7072041 139.6348211 suginami_prefs.xml`
+11,41 * * * *    root `php SunMoon.php 35.6558513 139.7465925 toshin_sunmoon_prefs.xml`
+11,41 * * * *    root `php SunMoon.php 38.2680128 140.8672388 sendai_sunmoon_prefs.xml`
+11,41 * * * *    root `php SunMoon.php 34.4550144 136.7236043 ise_sunmoon_prefs.xml`
+11,41 * * * *    root `php SunMoon.php 26.2123001 127.6770291 okinawa_sunmoon_prefs.xml`
+11,41 * * * *    root `php SunMoon.php 36.0316258 139.5320353 kitamoto_sunmoon_prefs.xml`
+11,41 * * * *    root `php SunMoon.php 35.6384972 139.8527315 sunmoon_prefs.xml`
+11,41 * * * *    root `php SunMoon.php 35.7072041 139.6348211 suginami_sunmoon_prefs.xml`
+*/5 * * * *     root php PowerOutput.php
+00 * * * *      root php WinOS.php
+00 0 * * *      root php FullNewMoon.php

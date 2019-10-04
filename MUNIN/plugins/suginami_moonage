@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ "$1" = "autoconf" ]; then
+        echo yes
+        exit 0
+fi
+
+if [ "$1" = "config" ]; then
+
+        echo 'graph_title 2.Moon age of Suginami-ku, Tokyo'
+#       echo 'graph_args --base 1000 -l 0'
+	echo 'graph_args --lower-limit -0 --upper-limit 30 --rigid'
+        echo 'graph_vlabel Moon age (days)'
+        echo 'graph_scale no'
+        echo 'graph_category Sun_Moon_Suginami-ku'
+        echo 'graph_info Moon age (days)'
+        echo 'moonage.label Moon age (days)'
+        echo 'moonage.info MUNIN-EX.php'
+	echo 'moonage.draw LINE2'
+	echo 'moonage.max 30'
+	echo 'moonage.min 0'
+	echo 'moonage.colour 00FF00'
+        # Last, if run with the "config"-parameter, quit here (don't
+        # display any data)
+        exit 0
+fi
+
+
+/home/kouji/public_html/html/AutoTweet/MUNIN/MUNIN-EX.php moonage suginami_sunmoon_prefs.xml

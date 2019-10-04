@@ -1,0 +1,103 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/home/kouji/public_html/html/AutoTweet/
+MAILTO=""
+
+# m h dom mon dow user	command
+#---------------------------------------------------------------------------------------------
+15 10,15 * * *    root `php bot-tenki-now2.php 北海道旭川市 		43.7708801 142.3628986 旭山動物園`
+35 10,15 * * *    root `php bot-tenki-now2.php 宮城県仙台市 		38.2680128 140.8672388 伊達政宗`
+55 10,15 * * * 	  root `php bot-tenki-now2.php 東京都杉並区 		35.6828172 139.6359633 高千穂大学`
+15 11,16 * * *    root `php bot-tenki-now2.php 東京都千代田区		35.6805149 139.7609748 秋葉原`
+35 11,16 * * *    root `php bot-tenki-now2.php 新潟県新潟市		37.9162227 139.0338007 タレかつ丼`
+55 11,16 * * *    root `php bot-tenki-now2.php 兵庫県神戸市 		34.6901564 135.1933343 神戸牛`
+15 12,17 * * *    root `php bot-tenki-now2.php 岡山県岡山市 		34.6552602 133.9173309 岡山後楽園`
+35 12,17 * * *    root `php bot-tenki-now2.php 愛媛県松山市 		33.8391552 132.7634315 愛媛みかん`
+55 12,17 * * *    root `php bot-tenki-now2.php 長崎県長崎市 		32.7503151 129.8757172 長崎ちゃんぽん`
+15 13,18 * * *    root `php bot-tenki-now2.php 沖縄県那覇市 		26.2123001 127.6770291 海ぶどう`
+35 13,18 * * *    root `php bot-tenki-now2.php 三重県伊勢市 		34.4550144 136.7236043 伊勢神宮`
+55 13,18 * * *    root `php bot-tenki-now2.php 奈良県橿原市 		34.4883573 135.7847834 橿原神宮`
+15 14,19 * * *    root `php bot-tenki-now2.php 京都府京都市 		34.9780444 135.778153  泉涌寺`
+35 14,19 * * *    root `php bot-tenki-now2.php 東京都新宿区 		35.6938095 139.7012745 明治神宮外苑`
+55 14,19 * * *    root `php bot-tenki-now2.php 北海道釧路市		42.9849181 144.3792078 阿寒湖`
+15 15,20 * * *    root `php bot-tenki-now2.php 埼玉県北本市 		36.0269093 139.5281153 トマトカレー`
+35 15,20 * * *    root `php bot-tenki-now2.php 神奈川県小田原市 	35.2646599 139.1500519 塩辛`
+55 15,20 * * *    root `php bot-tenki-now2.php 愛知県名古屋市 		35.1814419 136.9042315 ひつまぶし`
+15 16,21 * * *    root `php bot-tenki-now2.php 京都府京都市 		35.0116234 135.7659783 金閣寺`
+35 16,21 * * *    root `php bot-tenki-now2.php 葛西臨海公園 		35.6396865 139.8558044 Linux`
+55 16,21 * * *    root `php bot-tenki-now2.php 千葉県成田市		35.7860607 140.3160972 成田山新勝寺`
+15 17,22 * * *    root `php bot-tenki-now2.php 青森県むつ市		41.2924019 141.1833878 大湊ネブタ`
+35 17,22 * * *    root `php bot-tenki-now2.php 大阪府大阪市		34.6937281 135.5000233 大坂城`
+55 17,22 * * *    root `php bot-tenki-now2.php 北海道石狩市		43.1713704 141.313327  石狩鍋`
+15 18,23 * * *    root `php bot-tenki-now2.php 香川県高松市		34.3427917 134.044385  讃岐うどん`
+35 18,23 * * *    root `php bot-tenki-now2.php 鹿児島県鹿児島市		31.597668  130.5525437 桜島`
+#---------------------------------------------------------------------------------------------
+55 10-23 * * *		root `php EasyBotter/bot.php`
+10 3,15 * * *		root `php bot-LinuxMint.php`
+00 8,20 * * * 	 	root `php bot-elementary5.php`
+05 11 * * *	 	root `php bot-Win7Support.php`
+05 13 * * * 		root `php bot-Vista-5.php`
+05 15 * * * 		root `php bot-Win7.php`
+05 17 * * *		root `php bot-Vista-X.php`
+01 8-23 * * *		root `php bot-Denryoku-now.php NORMAL Linux`
+21 8-23 * * *		root `php bot-Denryoku-now.php CHECK 電力自由化`
+41 8-23 * * *		root `php bot-Denryoku-now.php CHECK 高千穂大学`
+*/10 4-8 * * * 		root `php bot-OhaKon-Ise.php 伊勢神宮 希望 CHECK`
+00 12 * * * 		root `php bot-OhaKon-Ise.php 伊勢神宮 努力 NORMAL`
+*/10 16-20 * * *	root `php bot-OhaKon-Ise.php 伊勢神宮 感謝 CHECK`
+*/10 4-8 * * * 		root `php bot-OhaKon-Tokyo.php 高千穂大学 希望 CHECK`
+00 12 * * * 		root `php bot-OhaKon-Tokyo.php 高千穂大学 努力 NORMAL`
+*/10 16-20 * * *	root `php bot-OhaKon-Tokyo.php 高千穂大学 感謝 CHECK`
+#---------------------------------------------------------------------------------------------
+00 10 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 北海道旭川市 			43.7708801 142.3628986 國士無双`
+00 17 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 北海道旭川市 		43.7708801 142.3628986 旭川ラーメン`
+15 10 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 宮城県仙台市 			38.2680128 140.8672388 ずんだ餅`
+15 17 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 宮城県仙台市 		38.2680128 140.8672388 牛タン`
+30 10 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 東京都杉並区 			35.6828172 139.6359633 高千穂大学`
+30 17 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 東京都杉並区 		35.6828172 139.6359633 高千穂大学`
+45 10 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 東京都千代田区 		35.6805149 139.7609748 千鳥ヶ淵`
+45 17 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 東京都千代田区 		35.6805149 139.7609748 秋葉原`
+00 11 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 新潟県新潟市			37.9162227 139.0338007 笹団子`
+00 18 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 新潟県新潟市		37.9162227 139.0338007 どぶろく`
+15 11 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 兵庫県神戸市 			34.6901564 135.1933343 明石海峡大橋`
+15 18 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 兵庫県神戸市 		34.6901564 135.1933343 かつめし`
+30 11 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 岡山県岡山市 			34.6552602 133.9173309 備前焼`
+30 18 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 岡山県岡山市 		34.6552602 133.9173309 きびだんご`
+45 11 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 愛媛県松山市 			33.8391552 132.7634315 五色そうめん`
+45 18 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 愛媛県松山市 		33.8391552 132.7634315 松山城`
+00 12 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 長崎県長崎市 			32.7503151 129.8757172 かんざらし`
+00 19 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 長崎県長崎市		32.7503151 129.8757172 前田冷菓`
+15 12 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 沖縄県那覇市 			26.2123001 127.6770291 首里城`
+15 19 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 沖縄県那覇市 		26.2123001 127.6770291 アセロラ`
+30 12 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 三重県伊勢市 			34.4550144 136.7236043 伊勢神宮`
+30 19 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 三重県伊勢市 		34.4550144 136.7236043 伊勢神宮`
+45 12 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 奈良県橿原市 			34.4883573 135.7847834 橿原神宮`
+45 19 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 奈良県橿原市 		34.4883573 135.7847834 橿原神宮`
+00 13 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 京都府京都市 			34.9780444 135.778153  泉涌寺`
+00 20 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 京都府京都市 		34.9780444 135.778153  泉涌寺`
+15 13 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 東京都新宿区 			35.6938095 139.7012745 明治神宮外苑`
+15 20 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 東京都新宿区 		35.6938095 139.7012745 明治神宮外苑`
+30 13 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 北海道釧路市			42.9849181 144.3792078 釧路ラーメン`
+30 20 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 北海道釧路市		42.9849181 144.3792078 釧路ししゃも`
+45 13 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 埼玉県北本市 			36.0269093 139.5281153 北本トマト`
+45 20 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 埼玉県北本市 		36.0269093 139.5281153 トマト大福`
+00 14 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 神奈川県小田原市 		35.2646599 139.1500519 小田原城`
+00 21 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 神奈川県小田原市 		35.2646599 139.1500519 かまぼこ`
+15 14 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 愛知県名古屋市 		35.1814419 136.9042315 名古屋城`
+15 21 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 愛知県名古屋市 		35.1814419 136.9042315 味噌カツ`
+30 14 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 京都府京都市 			35.0116234 135.7659783 京都ラーメン`
+30 21 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 京都府京都市 		35.0116234 135.7659783 おばんざい`
+45 14 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 葛西臨海公園 			35.6396865 139.8558044 VPS`
+45 21 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 葛西臨海公園 		35.6396865 139.8558044 VPS`
+00 15 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 千葉県成田市 			35.7860607 140.3160972 成田山新勝寺`
+00 22 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 千葉県成田市 		35.7860607 140.3160972 成田山新勝寺`
+15 15 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 青森県むつ市			41.2924019 141.1833878 夢の平成号`
+15 22 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 青森県むつ市		41.2924019 141.1833878 ほっかりん`
+30 15 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 大阪府大阪市			34.6937281 135.5000233 道頓堀`
+30 22 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 大阪府大阪市		34.6937281 135.5000233 御堂筋`
+45 15 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 北海道石狩市			43.1713704 141.313327  さくらのVPS`
+45 22 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 北海道石狩市		43.1713704 141.313327  恋人の聖地`
+00 16 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 香川県高松市			34.3427917 134.044385  栗林公園`
+00 23 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 香川県高松市		34.3427917 134.044385  ぶどう餅`
+15 16 * * *     root `php bot-TodayTomorrow-wg1.php TODAY 鹿児島県鹿児島市		31.597668  130.5525437 西郷隆盛`
+15 23 * * *     root `php bot-TodayTomorrow-wg1.php TOMORROW 鹿児島県鹿児島市		31.597668  130.5525437 さつまあげ`

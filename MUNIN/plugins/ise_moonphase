@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ "$1" = "autoconf" ]; then
+        echo yes
+        exit 0
+fi
+
+if [ "$1" = "config" ]; then
+
+        echo 'graph_title 3.Moon phase of Ise City, Mie Prefecture'
+#       echo 'graph_args --base 1000 -l 0'
+	echo 'graph_args --lower-limit -0 --upper-limit 360 --rigid'
+        echo 'graph_vlabel Moon phase (degrees)'
+        echo 'graph_scale no'
+        echo 'graph_category Sun_Moon_Ise'
+        echo 'graph_info Moon phase (degree)'
+        echo 'moonphase.label Moon phase (degrees)'
+        echo 'moonphase.info MUNIN-EX.php'
+	echo 'moonphase.draw AREA'
+	echo 'moonphase.max 360'
+	echo 'moonphase.min 0'
+	echo 'moonphase.colour FFFF00'
+        # Last, if run with the "config"-parameter, quit here (don't
+        # display any data)
+        exit 0
+fi
+
+
+/home/kouji/public_html/html/AutoTweet/MUNIN/MUNIN-EX.php moonphase ise_sunmoon_prefs.xml

@@ -1,0 +1,47 @@
+#!/bin/bash
+
+if [ "$1" = "autoconf" ]; then
+        echo yes
+        exit 0
+fi
+
+if [ "$1" = "config" ]; then
+
+        echo 'graph_title 1.The Sun & The Moon of Naha, Okinawa Prefecture'
+#       echo 'graph_args --base 1000 -l 0'
+	echo 'graph_args --lower-limit -0 --upper-limit 24 --rigid'
+        echo 'graph_vlabel Time (hour)'
+        echo 'graph_scale no'
+        echo 'graph_category sun_moon_naha'
+        echo 'graph_info The Sun & The Moon'
+        echo 'sunrise.label Sunrise (Time)'
+        echo 'sunrise.info MUNIN-EX.php'
+	echo 'sunrise.draw LINE2'
+	echo 'sunrise.max 24'
+	echo 'sunrise.min 0'
+	echo 'sunrise.colour FF0000'
+        echo 'sunset.label Sunset (Time)'
+        echo 'sunset.info MUNIN-EX.php'
+	echo 'sunset.draw LINE2'
+	echo 'sunset.max 24'
+	echo 'sunset.min 0'
+	echo 'sunset.colour 0000FF'
+        echo 'moonrise.label Moonrise (Time)'
+        echo 'moonrise.info MUNIN-EX.php'
+	echo 'moonrise.draw LINE2'
+	echo 'moonrise.max 24'
+	echo 'moonrise.min 0'
+	echo 'moonrise.colour FF00FF'
+        echo 'moonset.label Moonset (Time)'
+        echo 'moonset.info MUNIN-EX.php'
+	echo 'moonset.draw LINE2'
+	echo 'moonset.max 24'
+	echo 'moonset.min 0'
+	echo 'moonset.colour 00FFFF'
+        # Last, if run with the "config"-parameter, quit here (don't
+        # display any data)
+        exit 0
+fi
+
+
+/home/kouji/public_html/html/AutoTweet/MUNIN/MUNIN-EX.php sunmoon okinawa_sunmoon_prefs.xml

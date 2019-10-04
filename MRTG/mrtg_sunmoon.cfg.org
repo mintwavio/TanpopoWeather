@@ -1,0 +1,157 @@
+# Created by 
+# /usr/bin/cfgmaker private@localhost
+
+
+### Global Config Options
+
+#  for UNIX
+# WorkDir: /home/http/mrtg
+
+#  for Debian
+WorkDir: /home/kouji/public_html/html/mrtg_sunmoon/
+
+#  or for NT
+# WorkDir: c:\mrtgdata
+
+### Global Defaults
+
+#  to get bits instead of bytes and graphs growing to the right
+Options[_]: growright, noinfo
+
+EnableIPv6: no
+Language:eucjp
+
+######################################################################
+# System: Maya
+# Description: Linux Maya 3.2.0-23-generic #36-Ubuntu SMP Tue Apr 10 20:39:51 UTC 2012 x86_64
+# Contact: Me <me@example.org>
+# Location: Sitting on the Dock of the Bay
+######################################################################
+
+### 日の出・日の入 ###
+Target[sun_ise]: `/home/kouji/public_html/html/AutoTweet/MRTG/MRTG-EX.php sun ise_sunmoon_prefs.xml`
+MaxBytes[sun_ise]: 2400
+Title[sun_ise]: 三重県伊勢市　日の出・日の入
+PageTop[sun_ise]:<h1>三重県伊勢市　日の出・日の入</h1><h3>データは100倍してあります。</h3>
+
+Options[sun_ise]: growright,absolute,gauge,nopercent,noinfo
+unscaled[sun_ise]: dwmy
+#kMG[sun_ise]: k,M,G,T,P
+YLegend[sun_ise]: Sun (Time)
+ShortLegend[sun_ise]: Time (hours)
+LegendI[sun_ise]: 日の出【時】
+LegendO[sun_ise]: 日の入【時】
+Legend1[sun_ise]: 日の出【時】
+Legend2[sun_ise]: 日の入【時】
+
+### 日の出・日の入 ###
+Target[sun_okinawa]: `/home/kouji/public_html/html/AutoTweet/MRTG/MRTG-EX.php sun okinawa_sunmoon_prefs.xml`
+MaxBytes[sun_okinawa]: 2400
+Title[sun_okinawa]: 沖縄県那覇市　日の出・日の入
+PageTop[sun_okinawa]:<h1>沖縄県那覇市　日の出・日の入</h1><h3>データは100倍してあります。</h3>
+
+Options[sun_okinawa]: growright,absolute,gauge,nopercent,noinfo
+unscaled[sun_okinawa]: dwmy
+#kMG[sun_okinawa]: k,M,G,T,P
+YLegend[sun_okinawa]: Sun (Time)
+ShortLegend[sun_okinawa]: Time (hours)
+LegendI[sun_okinawa]: 日の出【時】
+LegendO[sun_okinawa]: 日の入【時】
+Legend1[sun_okinawa]: 日の出【時】
+Legend2[sun_okinawa]: 日の入【時】
+
+### 月の出・月の入 ###
+Target[moon_ise]: `/home/kouji/public_html/html/AutoTweet/MRTG/MRTG-EX.php moon ise_sunmoon_prefs.xml`
+MaxBytes[moon_ise]: 2400
+Title[moon_ise]: 三重県伊勢市　月の出・月の入
+PageTop[moon_ise]:<h1>三重県伊勢市　月の出・月の入</h1><h3>データは100倍してあります。</h3>
+
+Options[moon_ise]: growright,absolute,gauge,nopercent,noinfo
+unscaled[moon_ise]: dwmy
+#kMG[moon_ise]: k,M,G,T,P
+YLegend[moon_ise]: Moon (Time)
+ShortLegend[moon_ise]: Time (hours)
+LegendI[moon_ise]: 月の出【時】
+LegendO[moon_ise]: 月の入【時】
+Legend1[moon_ise]: 月の出【時】
+Legend2[moon_ise]: 月の入【時】
+
+### 月の出・月の入 ###
+Target[moon_okinawa]: `/home/kouji/public_html/html/AutoTweet/MRTG/MRTG-EX.php moon okinawa_sunmoon_prefs.xml`
+MaxBytes[moon_okinawa]: 2400
+Title[moon_okinawa]: 沖縄県那覇市　月の出・月の入
+PageTop[moon_okinawa]:<h1>沖縄県那覇市　月の出・月の入</h1><h3>データは100倍してあります。</h3>
+
+Options[moon_okinawa]: growright,absolute,gauge,nopercent,noinfo
+unscaled[moon_okinawa]: dwmy
+#kMG[moon_okinawa]: k,M,G,T,P
+YLegend[moon_okinawa]: Moon (Time)
+ShortLegend[moon_okinawa]: Time (hours)
+LegendI[moon_okinawa]: 月の出【時】
+LegendO[moon_okinawa]: 月の入【時】
+Legend1[moon_okinawa]: 月の出【時】
+Legend2[moon_okinawa]: 月の入【時】
+
+### 月齢 ###
+Target[moon_age_ise]: `/home/kouji/public_html/html/AutoTweet/MRTG/MRTG-EX.php MOON-AGE ise_sunmoon_prefs.xml`
+MaxBytes[moon_age_ise]: 3000
+Title[moon_age_ise]: 三重県伊勢市　月齢
+PageTop[moon_age_ise]:<h1>三重県伊勢市　月齢</h1><h3>データは100倍してあります。</h3>
+
+Options[moon_age_ise]: growright,absolute,gauge,nopercent,noinfo
+unscaled[moon_age_ise]: dwmy
+#kMG[moon_age_ise]: k,M,G,T,P
+YLegend[moon_age_ise]: Moon age (days)
+ShortLegend[moon_age_ise]: days
+LegendI[moon_age_ise]: 月齢【日】
+LegendO[moon_age_ise]: 月齢【日】
+Legend1[moon_age_ise]: 月齢【日】
+Legend2[moon_age_ise]: 月齢【日】
+
+### 月齢 ###
+Target[moon_age_okinawa]: `/home/kouji/public_html/html/AutoTweet/MRTG/MRTG-EX.php MOON-AGE okinawa_sunmoon_prefs.xml`
+MaxBytes[moon_age_okinawa]: 3000
+Title[moon_age_okinawa]: 沖縄県那覇市　月齢
+PageTop[moon_age_okinawa]:<h1>沖縄県那覇市　月齢</h1><h3>データは100倍してあります。</h3>
+
+Options[moon_age_okinawa]: growright,absolute,gauge,nopercent,noinfo
+unscaled[moon_age_okinawa]: dwmy
+#kMG[moon_age_okinawa]: k,M,G,T,P
+YLegend[moon_age_okinawa]: Moon age (days)
+ShortLegend[moon_age_okinawa]: days
+LegendI[moon_age_okinawa]: 月齢【日】
+LegendO[moon_age_okinawa]: 月齢【日】
+Legend1[moon_age_okinawa]: 月齢【日】
+Legend2[moon_age_okinawa]: 月齢【日】
+
+### 月相 ###
+Target[moon_phase_ise]: `/home/kouji/public_html/html/AutoTweet/MRTG/MRTG-EX.php MOON-PHASE ise_sunmoon_prefs.xml`
+MaxBytes[moon_phase_ise]: 360
+Title[moon_phase_ise]: 三重県伊勢市　月相
+PageTop[moon_phase_ise]:<h1>三重県伊勢市　月相</h1>
+
+Options[moon_phase_ise]: growright,absolute,gauge,nopercent,noinfo
+unscaled[moon_phase_ise]: dwmy
+#kMG[moon_phase_ise]: k,M,G,T,P
+YLegend[moon_phase_ise]: Moon phase (deg)
+ShortLegend[moon_phase_ise]: degrees
+LegendI[moon_phase_ise]: 月相【°】
+LegendO[moon_phase_ise]: 月相【°】
+Legend1[moon_phase_ise]: 月相【°】
+Legend2[moon_phase_ise]: 月相【°】
+
+### 月相 ###
+Target[moon_phase_okinawa]: `/home/kouji/public_html/html/AutoTweet/MRTG/MRTG-EX.php MOON-PHASE okinawa_sunmoon_prefs.xml`
+MaxBytes[moon_phase_okinawa]: 360
+Title[moon_phase_okinawa]: 沖縄県那覇市　月相
+PageTop[moon_phase_okinawa]:<h1>沖縄県那覇市　月相</h1>
+
+Options[moon_phase_okinawa]: growright,absolute,gauge,nopercent,noinfo
+unscaled[moon_phase_okinawa]: dwmy
+#kMG[moon_phase_okinawa]: k,M,G,T,P
+YLegend[moon_phase_okinawa]: Moon phase (deg)
+ShortLegend[moon_phase_okinawa]: degrees
+LegendI[moon_phase_okinawa]: 月相【°】
+LegendO[moon_phase_okinawa]: 月相【°】
+Legend1[moon_phase_okinawa]: 月相【°】
+Legend2[moon_phase_okinawa]: 月相【°】

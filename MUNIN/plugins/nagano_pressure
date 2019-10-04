@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ "$1" = "autoconf" ]; then
+        echo yes
+        exit 0
+fi
+
+if [ "$1" = "config" ]; then
+
+        echo 'graph_title 5.Air pressure of Nagano-shi, Nagano Prefecture'
+#        echo 'graph_args --base 1000 -l 0'
+	echo 'graph_args --lower-limit 900 --upper-limit 1100 --rigid'
+        echo 'graph_vlabel Air Pressure (hPa)'
+        echo 'graph_scale no'
+        echo 'graph_category weather_nagano'
+        echo 'graph_info Air Pressure'
+        echo 'pressure.label Air Pressure (hPa)'
+        echo 'pressure.info MUNIN-EX.php'
+	echo 'pressure.draw AREA'
+	echo 'pressure.min 900'
+	echo 'pressure.max 1100'
+	echo 'pressure.colour 33CCFF'
+        # Last, if run with the "config"-parameter, quit here (don't
+        # display any data)
+        exit 0
+fi
+
+
+/home/kouji/public_html/html/AutoTweet/MUNIN/MUNIN-EX.php pressure nagano_prefs.xml

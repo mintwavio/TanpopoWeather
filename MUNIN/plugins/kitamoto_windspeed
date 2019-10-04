@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ "$1" = "autoconf" ]; then
+        echo yes
+        exit 0
+fi
+
+if [ "$1" = "config" ]; then
+
+        echo 'graph_title 3.Wind speed of Kitamoto-shi, Saitama Pref.'
+        echo 'graph_args --base 1000 -l 0'
+        echo 'graph_vlabel Wind Speed (m/s)'
+        echo 'graph_scale yes'
+        echo 'graph_category weather_kitamoto'
+        echo 'graph_info Wind Speed'
+        echo 'windspeed.label Wind Speed (m/s)'
+        echo 'windspeed.info MUNIN-EX.php'
+	echo 'windspeed.draw LINE2'
+	echo 'windspeed.colour FF00FF'
+        # Last, if run with the "config"-parameter, quit here (don't
+        # display any data)
+        exit 0
+fi
+
+
+/home/kouji/public_html/html/AutoTweet/MUNIN/MUNIN-EX.php windspeed kitamoto_prefs.xml

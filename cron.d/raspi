@@ -1,0 +1,7 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/home/kouji/public_html/html/AutoTweet/
+MAILTO=""
+
+30 10-23 * * *	root `php Raspi_Info.php`
+*/5 * * * *	admin scp sakura:/etc/zabbix/externalscripts/power_prefs.xml /etc/zabbix/externalscripts/

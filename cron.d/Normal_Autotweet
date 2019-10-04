@@ -1,0 +1,35 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/home/kouji/public_html/html/AutoTweet/
+MAILTO=""
+
+# m h dom mon dow user	command
+#------------------------------------------------------------------------------------------------------------------------------
+00 10-19/3 * * *    root `php bot-tenki-now.php 三重県伊勢市 		34.4550144 136.7236043 伊勢神宮`
+30 10-19/3 * * *    root `php bot-tenki-now.php 東京都杉並区 		35.6828172 139.6359633 大宮八幡宮`
+00 11-20/3 * * *    root `php bot-tenki-now.php 東京都千代田区		35.6805149 139.7609748 秋葉原`
+30 11-20/3 * * *    root `php bot-tenki-now.php 東京都新宿区 		35.6787997 139.7154058 明治神宮外苑`
+00 12-21/3 * * *    root `php bot-tenki-now.php 鹿児島県鹿児島市	31.5965925 130.5568621 桜島`
+#------------------------------------------------------------------------------------------------------------------------------
+55 10-21 * * *		root `php EasyBotter/bot.php`
+01 8-23 * * *		root `php bot-Denryoku-now.php NORMAL Linux`
+21 8-23 * * *		root `php bot-Denryoku-now.php CHECK 電力自由化`
+41 8-23 * * *		root `php bot-Denryoku-now.php CHECK VPS`
+*/10 4-8 * * * 		root `php bot-OhaKon-Ise.php 伊勢神宮 希望 CHECK`
+00 12 * * * 		root `php bot-OhaKon-Ise.php 伊勢神宮 努力 NORMAL`
+*/10 16-20 * * *	root `php bot-OhaKon-Ise.php 伊勢神宮 感謝 CHECK`
+*/10 4-8 * * * 		root `php bot-OhaKon-Tokyo.php VPS 希望 CHECK`
+00 12 * * * 		root `php bot-OhaKon-Tokyo.php VPS 努力 NORMAL`
+*/10 16-20 * * *	root `php bot-OhaKon-Tokyo.php VPS 感謝 CHECK`
+#------------------------------------------------------------------------------------------------------------------------------
+15 10 * * *     root `php bot-TodayTomorrow.php TODAY 三重県伊勢市 		34.4550144 136.7236043 伊勢神宮`
+15 16 * * *     root `php bot-TodayTomorrow.php TOMORROW 三重県伊勢市 		34.4550144 136.7236043 伊勢神宮`
+45 10 * * *     root `php bot-TodayTomorrow.php TODAY 東京都杉並区 		35.6828172 139.6359633 善福寺川`	
+45 16 * * *     root `php bot-TodayTomorrow.php TOMORROW 東京都杉並区 		35.6828172 139.6359633 善福寺公園`
+15 11 * * *     root `php bot-TodayTomorrow.php TODAY 東京都千代田区 		35.6805149 139.7609748 秋葉原`
+15 17 * * *     root `php bot-TodayTomorrow.php TOMORROW 東京都千代田区 	35.6805149 139.7609748 秋葉原`
+45 11 * * *     root `php bot-TodayTomorrow.php TODAY 東京都新宿区 		35.6787997 139.7154058 明治神宮外苑`
+45 17 * * *     root `php bot-TodayTomorrow.php TOMORROW 東京都新宿区 		35.6787997 139.7154058 明治神宮外苑`
+15 12 * * *     root `php bot-TodayTomorrow.php TODAY 鹿児島県鹿児島市		31.5965925 130.5568621 西郷隆盛`
+15 18 * * *     root `php bot-TodayTomorrow.php TOMORROW 鹿児島県鹿児島市	31.5965925 130.5568621 さつまあげ`
+#-----------------------------------------------------------------------------------------------------------------------------

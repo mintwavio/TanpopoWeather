@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="ja">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Windows サポート期限</title>
+    <meta content="Kouji Sugibayashi" name="author">
+  </head>
+  <body style="                    background-image: url(https://linuxparadise.moe.hm/wp-content/uploads/2016/10/GUM13_PA01002.jpg);">
+    <div style="font-size: 14px;" align="center"><br>
+    </div>
+    <div style="font-size: 14px;" align="center"><br>
+      <div style="text-align: center;">
+        <script>
+window.onload=function(){
+setInterval("document.getElementById('Coffee').src='https://linuxparadise.moe.hm/bot-Coffee-Image.php'",60000);
+}
+</script> <iframe src="https://linuxparadise.moe.hm/bot-Coffee-Image.php"
+          style="" id="Coffee" scrolling="no" width="965" height="545" frameborder="0"></iframe> <br>
+      </div>
+      <div style="text-align: center;"><br>
+      </div>
+      <div style="text-align: center;">感謝：<a target="_blank" href="https://www.microsoft.com/ja-jp">Microsoft</a>、 <a
+          target="_blank" href="https://elementary.io/ja/">elementary OS</a>、 <a
+          target="_blank" href="https://www.apple.com/jp/">Apple</a> ／ 【 <a
+          target="_blank" href="https://linuxparadise.moe.hm/">HOME</a>】</div>
+    </div>
+  </body>
+</html>

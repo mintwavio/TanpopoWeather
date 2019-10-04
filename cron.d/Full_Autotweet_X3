@@ -1,0 +1,31 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/home/kouji/public_html/html/AutoTweet/
+MAILTO=""
+
+# m h dom mon dow user	command
+#---------------------------------------------------------------------------------------------
+00 04,09,14,19 * * *    root `php bot-tenki-now.php 三重県伊勢市 	34.4550144 136.7236043 伊勢神宮`
+00 05,10,15,20 * * *    root `php bot-tenki-now.php 奈良県橿原市 	34.4883573 135.7847834 橿原神宮`
+00 06,11,16,21 * * *    root `php bot-tenki-now.php 京都府京都市	34.9780444 135.7781530 泉涌寺`
+00 07,12,17,22 * * *    root `php bot-tenki-now.php 東京都杉並区 	35.6995679 139.6342498 阿佐ヶ谷神明宮`
+00 08,13,18,23 * * *    root `php bot-tenki-now.php 葛西臨海公園 	35.6396865 139.8558044 Linux🐧`
+#---------------------------------------------------------------------------------------------
+55 */4 * * *		root `php EasyBotter/bot.php`
+10 03,15 * * *		root `php bot-LinuxMint.php`
+00 08,20 * * * 	 	root `php bot-elementary.php`
+08 11 * * *	 	root `php bot-Win7Support.php`
+08 13 * * * 		root `php bot-Win7-Tano.php`
+01 01-23 * * *		root `php bot-Denryoku-now.php CHECK Linux🐧`
+16 01-23 * * *		root `php bot-Denryoku-now.php CHECK 高千穂大学`
+31 01-23 * * *		root `php bot-Denryoku-now.php CHECK 北本市`
+46 01-23 * * *		root `php bot-Denryoku-now.php CHECK 電力自由化`
+*/10 04-08 * * *	root `php bot-OhaKon-Ise.php 伊勢神宮 希望 CHECK`
+00 12 * * * 		root `php bot-OhaKon-Ise.php 伊勢神宮 努力 NORMAL`
+*/10 16-20 * * *	root `php bot-OhaKon-Ise.php 伊勢神宮 感謝 CHECK`
+*/10 04-08 * * * 	root `php bot-OhaKon-Kitamoto.php 北本トマト 希望 CHECK`
+00 12 * * * 		root `php bot-OhaKon-Kitamoto.php トマトカレー 努力 NORMAL`
+*/10 16-20 * * *	root `php bot-OhaKon-Kitamoto.php 範頼そば 感謝 CHECK`
+*/10 04-08 * * * 	root `php bot-OhaKon-Suginami.php 阿佐ヶ谷神明宮 希望 CHECK`
+00 12 * * * 		root `php bot-OhaKon-Suginami.php 阿佐ヶ谷神明宮 努力 NORMAL`
+*/10 16-20 * * *	root `php bot-OhaKon-Suginami.php 阿佐ヶ谷神明宮 感謝 CHECK`

@@ -1,0 +1,33 @@
+#!/bin/bash
+
+if [ "$1" = "autoconf" ]; then
+        echo yes
+        exit 0
+fi
+
+if [ "$1" = "config" ]; then
+
+        echo 'graph_title 02.Tohoku Electric Power Company'
+        echo 'graph_args --base 1000 -l 0'
+        echo 'graph_vlabel Power (W)'
+        echo 'graph_scale yes'
+        echo 'graph_category Leading_power_company'
+        echo 'graph_info Power (W)'
+        echo 'capacity.label Power capacity (W)'
+        echo 'capacity.info MUNIN-EX.php'
+	echo 'capacity.draw AREA'
+	echo 'capacity.colour 33FF88'
+        echo 'usage.label Power usage (W)'
+        echo 'usage.info MUNIN-EX.php'
+	echo 'usage.draw AREA'
+	echo 'usage.colour FFFF33'
+        echo 'yosou.label Expected maximum power (W)'
+        echo 'yosou.info MUNIN-EX.php'
+	echo 'yosou.draw LINE1'
+	echo 'yosou.colour 0088AA'
+        # Last, if run with the "config"-parameter, quit here (don't
+        # display any data)
+        exit 0
+fi
+
+/home/kouji/public_html/html/AutoTweet/MUNIN/MUNIN-EX.php Tohoku power_prefs.xml

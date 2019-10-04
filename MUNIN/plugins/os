@@ -1,0 +1,38 @@
+#!/bin/bash
+
+if [ "$1" = "autoconf" ]; then
+        echo yes
+        exit 0
+fi
+
+if [ "$1" = "config" ]; then
+
+        echo 'graph_title Time Limit'
+#        echo 'graph_args --base 1000 -l 0'
+	echo 'graph_args --lower-limit -10 --rigid'
+        echo 'graph_vlabel Time Limit (days)'
+        echo 'graph_scale yes'
+        echo 'graph_category Time'
+        echo 'graph_info Time Limit'
+        echo 'Olympic.label Tokyo 2020 Olympic Paralympic (days)'
+        echo 'Olympic.info MUNIN-EX.php'
+	echo 'Olympic.draw LINE2'
+	echo 'Olympic.colour FFA600'
+        echo 'Win10.label Windows 10 Support (days)'
+        echo 'Win10.info MUNIN-EX.php'
+	echo 'Win10.draw LINE2'
+	echo 'Win10.colour CC66CC'
+        echo 'Win81.label Windows 8.1 Support (days)'
+        echo 'Win81.info MUNIN-EX.php'
+	echo 'Win81.draw LINE2'
+	echo 'Win81.colour 33CCFF'
+        echo 'Win7.label Windows 7 Support (days)'
+        echo 'Win7.info MUNIN-EX.php'
+	echo 'Win7.draw LINE2'
+	echo 'Win7.colour 33FF33'
+        # Last, if run with the "config"-parameter, quit here (don't
+        # display any data)
+        exit 0
+fi
+
+/home/kouji/public_html/html/AutoTweet/MUNIN/MUNIN-EX.php OS WinOS_prefs.xml

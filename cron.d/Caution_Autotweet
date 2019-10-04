@@ -1,0 +1,20 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/home/kouji/public_html/html/AutoTweet/
+MAILTO=""
+
+# m h dom mon dow user	command
+#-----------------------------------------------------------------------------------------------------
+30 0-22/2 * * *    	root `php bot-tenki-now.php 三重県伊勢市 34.4550144 136.7236043 伊勢神宮`
+30 1-23/2 * * *		root `php bot-tenki-now.php 東京都杉並区 35.6828172 139.6359633 大宮八幡宮`
+#-----------------------------------------------------------------------------------------------------
+55 10-23 * * *		root `php EasyBotter/bot.php`
+01 6-23 * * *		root `php bot-Denryoku-now.php NORMAL Linux`
+31 6-23 * * *		root `php bot-Denryoku-now.php CHECK VPS`
+*/10 4-8 * * * 		root `php bot-OhaKon-Ise.php 伊勢神宮 希望 CHECK`
+00 12 * * * 		root `php bot-OhaKon-Ise.php 伊勢神宮 努力 NORMAL`
+*/10 16-20 * * *	root `php bot-OhaKon-Ise.php 伊勢神宮 感謝 CHECK`
+*/10 4-8 * * * 		root `php bot-OhaKon-Tokyo.php VPS 希望 CHECK`
+00 12 * * * 		root `php bot-OhaKon-Tokyo.php VPS 努力 NORMAL`
+*/10 16-20 * * *	root `php bot-OhaKon-Tokyo.php VPS 感謝 CHECK`
+#-----------------------------------------------------------------------------------------------------
