@@ -1,8 +1,8 @@
 #!/usr/bin/php
 <?php
-/**
+/***
 	author: Kouji Sugibayashi
-*/
+***/
 
 require_once("TanpopoWeather.php");
 
