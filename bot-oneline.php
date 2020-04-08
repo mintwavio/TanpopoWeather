@@ -7,7 +7,7 @@
 	require_once 'TanpopoWeather.php';
 //-----------------------------------------------------------
 
-$image["picture"] = "./image/313.jpg";
+$image["picture"] = "https://thanks.linuxparadise.net/uploads/photos/284.png";
 
 //-----------------------------------------------------------
 function data_scroll() {

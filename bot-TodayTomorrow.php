@@ -27,21 +27,11 @@ $SHARP		= $argv[5];
 	$graph["Kyushu"]	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/power_kyushu-week.png";
 	$graph["Okinawa"]	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/power_okinawa-week.png";
 	$graph["Kaigai"] 	= "https://linuxparadise.net/bot-Win7-Image.php";
-/*
-	$cacti["Hokkaido"]	= "http://linuxparadise.net/cacti-graph/graphs/graph_49_2.png";
-	$cacti["Tohoku"]	= "http://linuxparadise.net/cacti-graph/graphs/graph_50_2.png";
-	$cacti["Tokyo"] 	= "http://linuxparadise.net/cacti-graph/graphs/graph_51_2.png";
-	$cacti["Chubu"]		= "http://linuxparadise.net/cacti-graph/graphs/graph_52_2.png";
-	$cacti["Hokuriku"]	= "http://linuxparadise.net/cacti-graph/graphs/graph_53_2.png";
-	$cacti["Kansai"]	= "http://linuxparadise.net/cacti-graph/graphs/graph_54_2.png";
-	$cacti["Chugoku"]	= "http://linuxparadise.net/cacti-graph/graphs/graph_55_2.png";
-	$cacti["Shikoku"]	= "http://linuxparadise.net/cacti-graph/graphs/graph_56_2.png";
-	$cacti["Kyushu"]	= "http://linuxparadise.net/cacti-graph/graphs/graph_57_2.png";
-	$cacti["Okinawa"]	= "http://linuxparadise.net/cacti-graph/graphs/graph_58_2.png";
- */
-	$spring["lemon_tea"] 	= "image/398.jpg";	
+
+	$spring["lemon_tea"] 	= "https://thanks.linuxparadise.net/uploads/photos/426.jpg";	
 	$spring["blue_sea"]	= "image/5-10-007.jpg";
 	$spring["spring_shiba"]	= "image/360.jpg";
+	$spring["sakura"]	= "https://thanks.linuxparadise.net/uploads/photos/362.jpg";
 //------------------------------------------------------------------------------
 function file_write($wm){
 
@@ -67,6 +57,8 @@ function file_write($wm){
 $TT = new Twitter_Class;
 $WW = new Weather_Class;
 $wm = $WW->openweathermap_forecast();
+
+$image["rain"] = $WW->rain_yahoo($LAT,$LON,10,600,600);
 
 if ($wm == NULL) {
 	echo "ERROR";
@@ -152,9 +144,9 @@ if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr
 }
 
 if ($DAYNAME == "TODAY") {
-	$image["screenshot"]  = $spring["spring1"];
+	$image["screenshot"]  = $spring["sakura"];
 } elseif ($DAYNAME == "TOMORROW")  {
-	$image["screenshot"]  = $spring["spring2"];
+	$image["screenshot"]  = $spring["lemon_tea"];
 } else {
 	$image["screenshot"]  = $spring["lemon_tea"];
 }
