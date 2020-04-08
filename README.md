@@ -1,7 +1,7 @@
 # Tanpopo Weather
 太陽、月、天気、電気をツイートするPHP。
 
-色々と、ごちゃ混ぜになってますが、杉林晃治がTwitterの@yurufuwatanpopoというアカウントで自動ツイートしている際に使っているPHPです。
+色々と、ごちゃ混ぜになってますが、杉林晃次がTwitterの@mint_tanpopoというアカウントで自動ツイートしている際に使っているPHPです。
 
 別途EasyBotter、tmhOAuthが必要です。
 
