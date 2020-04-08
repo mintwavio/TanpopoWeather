@@ -5,7 +5,7 @@
 
 別途EasyBotter、tmhOAuthが必要です。
 
-その他に必要なのが、OpenWeatherMap、Wunderground、Google Calendar API、Yahoo! デベロッパーネットワークというサイトへの登録も必要です。
+その他に必要なのが、OpenWeatherMap、Google Calendar API、Yahoo! デベロッパーネットワークというサイトへの登録も必要です。
 
 それぞれ、APPIDを必要とします。
 
