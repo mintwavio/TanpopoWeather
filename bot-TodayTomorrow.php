@@ -11,9 +11,6 @@ $LAT 		= $argv[3];
 $LON 		= $argv[4];
 $SHARP		= $argv[5];
 //------------------------------------------------------------------------
-//	$spring["spring1"]	= "image/girl_sea.jpg";
-	$spring["spring1"]	= "image/Cap008.jpg";
-	$spring["spring2"]	= "image/tanpopo_zorin.jpg";
 	$image["Denryoku_graph"]= "http://linuxparadise.net/Denryoku.php";
 
 	$graph["Hokkaido"]	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/power_hokkaido-week.png";
@@ -28,10 +25,9 @@ $SHARP		= $argv[5];
 	$graph["Okinawa"]	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/power_okinawa-week.png";
 	$graph["Kaigai"] 	= "https://linuxparadise.net/bot-Win7-Image.php";
 
-	$spring["lemon_tea"] 	= "https://thanks.linuxparadise.net/uploads/photos/426.jpg";	
-	$spring["blue_sea"]	= "image/5-10-007.jpg";
-	$spring["spring_shiba"]	= "image/360.jpg";
-	$spring["sakura"]	= "https://thanks.linuxparadise.net/uploads/photos/362.jpg";
+	$spring["lime"]		= "https://thanks.linuxparadise.net/uploads/photos/427.jpg";
+	$spring["girl"]		= "https://thanks.linuxparadise.net/uploads/photos/428.jpg";
+	$photo["tiger"]		= "./image/tiger.jpg";
 //------------------------------------------------------------------------------
 function file_write($wm){
 
@@ -144,11 +140,11 @@ if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr
 }
 
 if ($DAYNAME == "TODAY") {
-	$image["screenshot"]  = $spring["sakura"];
+	$image["screenshot"]  = $spring["girl"];
 } elseif ($DAYNAME == "TOMORROW")  {
-	$image["screenshot"]  = $spring["lemon_tea"];
+	$image["screenshot"]  = $photo["tiger"];
 } else {
-	$image["screenshot"]  = $spring["lemon_tea"];
+	$image["screenshot"]  = $photo["tiger"];
 }
 
 	$status = $message;
