@@ -32,12 +32,17 @@ if ($abe == NULL){
 	$img = ImageCreateFromJPEG("/home/kouji/public_html/html/AutoTweet/image/abenomikusu.jpg");
 	
 	# 必要に応じてUTF8へ変換(環境依存)
+	$now_txt = null;
+	$abe0_txt = null;
+	$abe1_txt = null;
+	$abe2_txt = null;
+	$iza1_txt = null;
+
 	$now_txt    = mb_convert_encoding(date("Y年m月d日〔".youbi_japan()."〕 H時i分 現在"), 'UTF-8', 'auto');
 	$abe0_txt   = mb_convert_encoding("2012年12月(1日）以降、アベノミクスが始まってからの日数","UTF-8","auto");
 	$abe1_txt   = mb_convert_encoding($abe["days"],"UTF-8","auto");
 	$abe2_txt   = mb_convert_encoding("（".$abe["y"].$abe["m"].$abe["d"]."）","UTF-8","auto");
-	$iza1_txt   = mb_convert_encoding("戦後最長の景気回復＝いざなみ景気（06ヶ年01ヶ月）","UTF-8","auto");
-	$iza2_txt   = mb_convert_encoding("（2002年2月〜08年2月）","UTF-8","auto");
+	$iza1_txt   = mb_convert_encoding("戦後最長の景気回復＝アベノミクス景気","UTF-8","auto");
 	$font       = "/usr/share/fonts/truetype/vlgothic/VL-PGothic-Regular.ttf";
 	$font_d     = "/usr/share/fonts/truetype/UpperEastSide.ttf";
 	

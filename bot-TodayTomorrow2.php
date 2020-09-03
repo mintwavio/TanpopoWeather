@@ -28,7 +28,6 @@ $SHARP		= $argv[5];
 	$spring["lime"]		= "https://thanks.linuxparadise.net/uploads/photos/427.jpg";
 	$spring["girl"]		= "https://thanks.linuxparadise.net/uploads/photos/428.jpg";
 
-	$gazou["nippon"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/000/";
 //------------------------------------------------------------------------------
 function file_write($wm){
 
@@ -55,15 +54,7 @@ $TT = new Twitter_Class;
 $WW = new Weather_Class;
 $wm = $WW->openweathermap_forecast();
 
-//$image["rain"] = $WW->rain_yahoo($LAT,$LON,10,600,600
-$target_day = date("Y-m-d H:i");
-$zure = substr(date("i"),1);
-$zure10 = "-".($zure + 10);
-$zure = date("YmdHi",strtotime($target_day . $zure10."minute"));
-foreach ($gazou as $key => $value){
-	$gazou[$key] = $value.$zure."-00.png";
-}
-$image["rain2"] = $gazou["nippon"];
+$image["rain"] = $WW->rain_yahoo($LAT,$LON,10,600,600);
 
 if ($wm == NULL) {
 	echo "ERROR";
@@ -77,7 +68,6 @@ if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr
 	if ($DAYNAME == "TODAY"){
 		$image["Denryoku"] = $graph["Tohoku"];
 	} else {
-//		$image["Denryoku"] = $cacti["Tohoku"];
 		$image["Denryoku"] = $graph["Tohoku"];
 	}
 
@@ -85,65 +75,54 @@ if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr
 	if ($DAYNAME == "TODAY") {
 		$image["Denryoku"] = $graph["Kansai"];
 	} else {
-//		$image["Denryoku"] = $cacti["Kansai"];
 		$image["Denryoku"] = $graph["Kansai"];
 	}
 } elseif (strstr($PLACE_NAME,"北海道")){
 	if ($DAYNAME == "TODAY") {
 		$image["Denryoku"] = $graph["Hokkaido"];
 	} else {
-//		$image["Denryoku"] = $cacti["Hokkaido"];
 		$image["Denryoku"] = $graph["Hokkaido"];
 	}
 } elseif (strstr($PLACE_NAME,"愛知県") || strstr($PLACE_NAME,"三重県") || strstr($PLACE_NAME,"長野県") || strstr($PLACE_NAME,"浜松市")){
 	if ($DAYNAME == "TODAY") {
 		$image["Denryoku"] = $graph["Chubu"];
 	} else {
-//		$image["Denryoku"] = $cacti["Chubu"];
 		$image["Denryoku"] = $graph["Chubu"];
 	}
 } elseif (strstr($PLACE_NAME,"愛媛県") || strstr($PLACE_NAME,"香川県")){
 	if ($DAYNAME == "TODAY") {
 		$image["Denryoku"] = $graph["Shikoku"];
 	} else {
-//		$image["Denryoku"] = $cacti["Shikoku"];
 		$image["Denryoku"] = $graph["Shikoku"];
 	}
 } elseif (strstr($PLACE_NAME,"長崎県") || strstr($PLACE_NAME,"鹿児島県") || strstr($PLACE_NAME,"福岡県")){
 	if ($DAYNAME == "TODAY") {
 		$image["Denryoku"] = $graph["Kyushu"];
 	} else {
-//		$image["Denryoku"] = $cacti["Kyushu"];
 		$image["Denryoku"] = $graph["Kyushu"];
 	}
 } elseif (strstr($PLACE_NAME,"沖縄県")){
 	if ($DAYNAME == "TODAY") {
 		$image["Denryoku"] = $graph["Okinawa"];
 	} else {
-//		$image["Denryoku"] = $cacti["Okinawa"];
 		$image["Denryoku"] = $graph["Okinawa"];
 	}
 } elseif (strstr($PLACE_NAME,"岡山県") || strstr($PLACE_NAME,"広島県")){
 	if ($DAYNAME == "TODAY") {
 		$image["Denryoku"] = $graph["Chugoku"];
 	} else {
-//		$image["Denryoku"] = $cacti["Chugoku"];
 		$image["Denryoku"] = $graph["Chugoku"];
 	}
 } elseif (strstr($PLACE_NAME,"石川県")){
 	if ($DAYNAME == "TODAY") {
 		$image["Denryoku"] = $graph["Hokuriku"];
 	} else {
-//		$image["Denryoku"] = $cacti["Hokuriku"];
 		$image["Denryoku"] = $graph["Hokuriku"];
 	}
-} elseif (strstr($PLACE_NAME,"ヘルシンキ") || strstr($PLACE_NAME,"ハワイ") || strstr($PLACE_NAME,"台湾")) {
-	$image["Denryoku"] = $graph["Kaigai"];
 } else {
 	if ($DAYNAME == "TODAY") {
 		$image["Denryoku"] = $graph["Tokyo"];
 	} else {
-//		$image["Denryoku"] = $cacti["Tokyo"];
 		$image["Denryoku"] = $graph["Tokyo"];
 	}
 }
@@ -194,7 +173,7 @@ if ($DAYNAME == "TODAY") {
 		);
 	} else {
 		$update_params = array(
-			'media_ids'    => $result_media_id["rain2"].",".$result_media_id["icon"].",".$result_media_id["screenshot"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
+			'media_ids'    => $result_media_id["screenshot"].",".$result_media_id["icon"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
 			'status'    =>  $status,//つぶやき内容
 		);
 	}

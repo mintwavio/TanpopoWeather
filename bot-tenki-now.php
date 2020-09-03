@@ -34,10 +34,43 @@
 	$temp["Suginami"]	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/suginami_temp-week.png";
 	$temp["ETC"]		= "http://linuxparadise.net/bot-Coffee-Image.php";
 
-//	$image["lemon_tea"] 	= "https://thanks.linuxparadise.net/uploads/photos/398.jpg";	
-	$image["lime"]		= "image/lime.jpg";
 	$image["memory"]	= "https://linuxparadise.net/zabbix/chart2.php?graphid=534&screenid=22&width=679&height=200&legend=1&profileIdx=web.screens.filter&profileIdx2=22&from=now-7d&to=now&_=tafgnn0a";
+
+	$gazou["kushiro"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/202/";
+	$gazou["ishikari"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/203/";
+	$gazou["asahikawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/201/";
+	$gazou["aomori"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/204/";
+	$gazou["miyagi"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/205/";
+	$gazou["tiba"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
+	$gazou["kanagawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
+	$gazou["saitama"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
+	$gazou["tokyo"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
+	$gazou["nagano"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/207/";
+	$gazou["niigata"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/208/";
+	$gazou["ishikawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/209/";
+	$gazou["shizuoka"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/210/";
+	$gazou["aiti"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/210/";
+	$gazou["mie"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/210/";
+	$gazou["osaka"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/211/";
+	$gazou["kyoto"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/211/";
+	$gazou["nara"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/211/";
+	$gazou["hyogo"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/211/";
+	$gazou["hiroshima"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/212/";
+	$gazou["okayama"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/212/";
+	$gazou["kagawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/213/";
+	$gazou["ehime"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/213/";
+	$gazou["nagasaki"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/214/";
+	$gazou["kagoshima"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/215/";
+	$gazou["okinawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/217/";
 //------------------------------------------------------------------------
+	$target_day = date("Y-m-d H:i");
+	$zure = substr(date("i"),1);
+	$zure10 = "-".($zure + 10);
+	$zure = date("YmdHi",strtotime($target_day . $zure10."minute"));
+	foreach ($gazou as $key => $value){
+		$gazou[$key] = $value.$zure."-00.png";
+	}
+
 function file_write(){
 	extract($GLOBALS);
 	$message  = "現在の".$PLACE_NAME."　\n";
@@ -134,10 +167,6 @@ function file_write(){
 				$message .= $kansya;
 			}
 	 	 }
-	} elseif (strstr($PLACE_NAME,"ヘルシンキ") || strstr($PLACE_NAME,"ハワイ")) {
-		$message .= "x 雨雲地図 o 地図のみ \n";
-	} elseif (strstr($PLACE_NAME,"台湾")) {
-		$message .= "";
 	} else {
           	 if ($Power["Tokyo"]["den_alive"] == "good"){
 			$message .= "東京電力電力使用率：".floor($Power["Tokyo"]["den_per"])."％　\n";
@@ -204,8 +233,6 @@ if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr
 	$image["Denryoku"] = $graph["Chugoku"];
 } elseif (strstr($PLACE_NAME,"石川県")){
 	$image["Denryoku"] = $graph["Hokuriku"];
-} elseif (strstr($PLACE_NAME,"フィンランド") || strstr($PLACE_NAME,"ハワイ") || strstr($PLACE_NAME,"台湾")) {
-	$image["Denryoku"] = $graph["Kaigai"];
 } else {
 	$image["Denryoku"] = $graph["Tokyo"];
 }
@@ -232,12 +259,67 @@ if (strstr($PLACE_NAME,"伊勢市")){
 	$image["Temp"] = $temp["ETC"];
 }
 
+if (strstr($PLACE_NAME,"石川県")){
+	$image["rain2"] = $gazou["ishikawa"];
+} elseif (strstr($PLACE_NAME,"広島県")){
+	$image["rain2"] = $gazou["hiroshima"];
+} elseif (strstr($PLACE_NAME,"旭川市")){
+	$image["rain2"] = $gazou["asahikawa"];
+} elseif (strstr($PLACE_NAME,"宮城県")){
+	$image["rain2"] = $gazou["miyagi"];
+} elseif (strstr($PLACE_NAME,"神奈川県")){
+	$image["rain2"] = $gazou["kanagawa"];
+} elseif (strstr($PLACE_NAME,"愛知県")){
+	$image["rain2"] = $gazou["aiti"];
+} elseif (strstr($PLACE_NAME,"新潟県")){
+	$image["rain2"] = $gazou["niigata"];
+} elseif (strstr($PLACE_NAME,"兵庫県")){
+	$image["rain2"] = $gazou["hyogo"];
+} elseif (strstr($PLACE_NAME,"静岡県")){
+	$image["rain2"] = $gazou["shizuoka"];
+} elseif (strstr($PLACE_NAME,"岡山県")){
+	$image["rain2"] = $gazou["okayama"];
+} elseif (strstr($PLACE_NAME,"愛媛県")){
+	$image["rain2"] = $gazou["ehime"];
+} elseif (strstr($PLACE_NAME,"長崎県")){
+	$image["rain2"] = $gazou["nagasaki"];
+} elseif (strstr($PLACE_NAME,"沖縄県")){
+	$image["rain2"] = $gazou["okinawa"];
+} elseif (strstr($PLACE_NAME,"三重県")){
+	$image["rain2"] = $gazou["mie"];
+} elseif (strstr($PLACE_NAME,"奈良県")){
+	$image["rain2"] = $gazou["nara"];
+} elseif (strstr($PLACE_NAME,"京都府")){
+	$image["rain2"] = $gazou["kyoto"];
+} elseif (strstr($PLACE_NAME,"釧路市")){
+	$image["rain2"] = $gazou["kushiro"];
+} elseif (strstr($PLACE_NAME,"埼玉県")){
+	$image["rain2"] = $gazou["saitama"];
+} elseif (strstr($PLACE_NAME,"千葉県")){
+	$image["rain2"] = $gazou["tiba"];
+} elseif (strstr($PLACE_NAME,"青森県")){
+	$image["rain2"] = $gazou["aomori"];
+} elseif (strstr($PLACE_NAME,"大阪府")){
+	$image["rain2"] = $gazou["osaka"];
+} elseif (strstr($PLACE_NAME,"石狩市")){
+	$image["rain2"] = $gazou["ishikari"];
+} elseif (strstr($PLACE_NAME,"香川県")){
+	$image["rain2"] = $gazou["kagawa"];
+} elseif (strstr($PLACE_NAME,"鹿児島県")){
+	$image["rain2"] = $gazou["kagoshima"];
+} elseif (strstr($PLACE_NAME,"長野県")){
+	$image["rain2"] = $gazou["nagano"];
+} elseif (strstr($PLACE_NAME,"札幌市")){
+	$image["rain2"] = $gazou["ishikari"];
+} else {
+	$image["rain2"] = $gazou["tokyo"];
+}
+
 	$image["weather_icon"] = $wm["weather_icon"];
 	if ($wm["weather_icon"] == NULL) {
 		unset($image["weather_icon"]);
 	}
-$image["rain"] = $WW->rain_yahoo($LAT,$LON,10,600,600);
-//echo $message;exit;
+//$image["rain"] = $WW->rain_yahoo($LAT,$LON,10,600,600);
 //----------------------------------------------------------
 $twitter = new tmhOauth(
 array(
@@ -259,12 +341,12 @@ array(
 //-----------------------------------------------------------
 	if ($wm["weather_icon"] == NULL){
 		$update_params = array(
-			'media_ids'    => $result_media_id["rain"].",".$result_media_id["memory"].",".$result_media_id["Temp"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
+			'media_ids'    => $result_media_id["rain2"].",".$result_media_id["memory"].",".$result_media_id["Temp"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
 			'status'    =>  $status,//つぶやき内容
 		);
 	} else {
 		$update_params = array(
-			'media_ids'    => $result_media_id["rain"].",".$result_media_id["weather_icon"].",".$result_media_id["Temp"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
+			'media_ids'    => $result_media_id["rain2"].",".$result_media_id["weather_icon"].",".$result_media_id["Temp"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
 			'status'    =>  $status,//つぶやき内容
 		);
 	}
