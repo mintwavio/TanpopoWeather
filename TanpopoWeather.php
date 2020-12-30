@@ -535,8 +535,8 @@ class Denryoku_Class {
 					break;
 				case "Tohoku":
 					$file = 'https://setsuden.nw.tohoku-epco.co.jp/common/demand/juyo_02_'.date("Ymd").'.csv';
-					$start_dat = 43;
-					$end_dat = 330;
+					$start_dat = 55;
+					$end_dat = 342;
 					$capacity_place = 2;
 					$yosou_place = 5;
 					break;
@@ -548,7 +548,7 @@ class Denryoku_Class {
 					$yosou_place = 5;
 					break;
 				case "Chubu":
-					$file = 'https://powergrid.chuden.co.jp/denki_yoho_content_data/juyo_cepco003.csv';
+					$file = 'http://powergrid.chuden.co.jp/denki_yoho_content_data/juyo_cepco003.csv';
 					$start_dat = 55;
 					$end_dat = 342;
 					$capacity_place = 2;
@@ -705,7 +705,7 @@ class Denryoku_Class {
 				        switch($status_code[1]){
 				            //404エラーの場合
 				            case 404:
-				                echo "指定したページが見つかりませんでした";
+					        echo "指定したページが見つかりませんでした";
 						$den["capacity"] = 0;
 						$den["yosou"]    = 0;
 						$den["usage"]    = 0;
@@ -717,7 +717,7 @@ class Denryoku_Class {
 						$den["now"]	 = date("Y-m-d H:i"); 
 						$den["timeX"]	 = "";
 						$den["up_down"] = "";
-						return($den);
+					 	return($den);
 				                break;
 				 
 				            //500エラーの場合
@@ -1202,7 +1202,8 @@ function rain_yahoo($LAT,$LON,$z,$w,$h){
 	    $description[601] = '雪';
 	    $description[602] = '大雪';
 	    $description[611] = 'みぞれ';
-	    $description[612] = 'にわかみぞれ';
+	    $description[612] = 'にわかみぞれ【弱】';
+	    $description[613] = 'にわかみぞれ';
 	    $description[615] = '雨や雪【弱】';
 	    $description[616] = '雨や雪';
 	    $description[620] = 'にわか雪【弱】';
