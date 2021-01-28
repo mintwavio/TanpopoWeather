@@ -40,6 +40,7 @@
 	$gazou["ishikari"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/203/";
 	$gazou["asahikawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/201/";
 	$gazou["aomori"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/204/";
+	$gazou["akita"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/204/";
 	$gazou["miyagi"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/205/";
 	$gazou["tiba"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
 	$gazou["kanagawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
@@ -60,6 +61,7 @@
 	$gazou["kagawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/213/";
 	$gazou["ehime"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/213/";
 	$gazou["nagasaki"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/214/";
+	$gazou["hukuoka"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/214/";
 	$gazou["kagoshima"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/215/";
 	$gazou["okinawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/217/";
 //------------------------------------------------------------------------
@@ -86,7 +88,7 @@ function file_write(){
 	$setsuden = "節電をしましょう。　\n";
 	$kansya   = "ご協力感謝します。　\n";
 
-	if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr($PLACE_NAME,"青森県")) {
+	if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr($PLACE_NAME,"青森県") || strstr($PLACE_NAME,"秋田県")) {
 		if ($Power["Tohoku"]["den_alive"] == "good"){
 			$message .= "東北電力電力使用率：".floor($Power["Tohoku"]["den_per"])."％　\n";
 			if ($Power["Tohoku"]["den_per"] >= 90) {
@@ -215,7 +217,7 @@ $message = file_write();
 //-------------------------------------------------------------------
 $status = $message;
 
-if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr($PLACE_NAME,"青森県")){
+if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr($PLACE_NAME,"青森県") || strstr($PLACE_NAME,"秋田県")){
 	$image["Denryoku"] = $graph["Tohoku"];
 } elseif (strstr($PLACE_NAME,"京都府") || strstr($PLACE_NAME,"奈良県") || strstr($PLACE_NAME,"兵庫県") || strstr($PLACE_NAME,"大阪府")){
 	$image["Denryoku"] = $graph["Kansai"];
@@ -311,6 +313,10 @@ if (strstr($PLACE_NAME,"石川県")){
 	$image["rain2"] = $gazou["nagano"];
 } elseif (strstr($PLACE_NAME,"札幌市")){
 	$image["rain2"] = $gazou["ishikari"];
+} elseif (strstr($PLACE_NAME,"秋田県")){
+	$image["rain2"] = $gazou["akita"];
+} elseif (strstr($PLACE_NAME,"福岡県")){
+	$image["rain2"] = $gazou["hukuoka"];
 } else {
 	$image["rain2"] = $gazou["tokyo"];
 }
@@ -319,7 +325,6 @@ if (strstr($PLACE_NAME,"石川県")){
 	if ($wm["weather_icon"] == NULL) {
 		unset($image["weather_icon"]);
 	}
-//$image["rain"] = $WW->rain_yahoo($LAT,$LON,10,600,600);
 //----------------------------------------------------------
 $twitter = new tmhOauth(
 array(
@@ -339,17 +344,10 @@ array(
 		$c++;
 	}
 //-----------------------------------------------------------
-	if ($wm["weather_icon"] == NULL){
-		$update_params = array(
-			'media_ids'    => $result_media_id["rain2"].",".$result_media_id["memory"].",".$result_media_id["Temp"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
-			'status'    =>  $status,//つぶやき内容
-		);
-	} else {
-		$update_params = array(
-			'media_ids'    => $result_media_id["rain2"].",".$result_media_id["weather_icon"].",".$result_media_id["Temp"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
-			'status'    =>  $status,//つぶやき内容
-		);
-	}
+	$update_params = array(
+		'media_ids'    => $result_media_id["rain2"].",".$result_media_id["weather_icon"].",".$result_media_id["Temp"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
+		'status'    =>  $status,//つぶやき内容
+	);
 	$code = $twitter->request( 'POST', "https://api.twitter.com/1.1/statuses/update.json", $update_params);
 	echo "[".$code."]\n".$status."\n";
 ?>

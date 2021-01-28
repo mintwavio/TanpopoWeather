@@ -25,8 +25,8 @@ $SHARP		= $argv[5];
 	$graph["Okinawa"]	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/power_okinawa-week.png";
 	$graph["Kaigai"] 	= "https://linuxparadise.net/bot-Win7-Image.php";
 
-	$spring["lime"]		= "https://thanks.linuxparadise.net/uploads/photos/427.jpg";
-	$spring["girl"]		= "https://thanks.linuxparadise.net/uploads/photos/428.jpg";
+	$spring["lemon"]	= "https://thanks.linuxparadise.net/uploads/photos/426.jpg";
+	$spring["sakura"]	= "https://thanks.linuxparadise.net/uploads/photos/362.jpg";
 
 	$gazou["nippon"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/000/";
 //------------------------------------------------------------------------------
@@ -63,7 +63,7 @@ $zure = date("YmdHi",strtotime($target_day . $zure10."minute"));
 foreach ($gazou as $key => $value){
 	$gazou[$key] = $value.$zure."-00.png";
 }
-$image["rain2"] = $gazou["nippon"];
+$image["rain2"] = "https://thanks.linuxparadise.net/uploads/photos/363.jpg";
 
 if ($wm == NULL) {
 	echo "ERROR";
@@ -73,7 +73,7 @@ if ($wm == NULL) {
 	$message = file_write($wm);
 }
 
-if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr($PLACE_NAME,"青森県")){
+if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr($PLACE_NAME,"青森県") || strstr($PLACE_NAME,"秋田県")){
 	if ($DAYNAME == "TODAY"){
 		$image["Denryoku"] = $graph["Tohoku"];
 	} else {
@@ -149,11 +149,11 @@ if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr
 }
 
 if ($DAYNAME == "TODAY") {
-	$image["screenshot"]  = $spring["girl"];
+	$image["screenshot"]  = $spring["sakura"];
 } elseif ($DAYNAME == "TOMORROW")  {
-	$image["screenshot"]  = $spring["lime"];
+	$image["screenshot"]  = $spring["lemon"];
 } else {
-	$image["screenshot"]  = $spring["lime"];
+	$image["screenshot"]  = $spring["lemon"];
 }
 
 	$status = $message;
@@ -194,7 +194,7 @@ if ($DAYNAME == "TODAY") {
 		);
 	} else {
 		$update_params = array(
-			'media_ids'    => $result_media_id["rain2"].",".$result_media_id["icon"].",".$result_media_id["screenshot"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
+			'media_ids'    => $result_media_id["screenshot"].",".$result_media_id["icon"].",".$result_media_id["Denryoku"],//先ほど取得したmedia_id
 			'status'    =>  $status,//つぶやき内容
 		);
 	}
