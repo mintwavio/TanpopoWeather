@@ -32,6 +32,7 @@
 	$temp["Nagano"] 	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/nagano_temp-week.png";
 	$temp["Kitamoto"] 	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/kitamoto_temp-week.png";
 	$temp["Suginami"]	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/suginami_temp-week.png";
+	$temp["Tsukuba"]	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/tsukuba_temp-week.png";
 	$temp["ETC"]		= "http://linuxparadise.net/bot-Coffee-Image.php";
 
 	$image["memory"]	= "https://linuxparadise.net/zabbix/chart2.php?graphid=534&screenid=22&width=679&height=200&legend=1&profileIdx=web.screens.filter&profileIdx2=22&from=now-7d&to=now&_=tafgnn0a";
@@ -45,6 +46,7 @@
 	$gazou["tiba"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
 	$gazou["kanagawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
 	$gazou["saitama"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
+	$gazou["ibaraki"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
 	$gazou["tokyo"]		= "http://www.jma.go.jp/jp/radnowc/imgs/radar/206/";
 	$gazou["nagano"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/207/";
 	$gazou["niigata"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/208/";
@@ -257,6 +259,8 @@ if (strstr($PLACE_NAME,"伊勢市")){
 	$image["Temp"] = $temp["Kitamoto"];
 }elseif (strstr($PLACE_NAME,"杉並区")){
 	$image["Temp"] = $temp["Suginami"];
+}elseif (strstr($PLACE_NAME,"つくば市")){
+	$image["Temp"] = $temp["Tsukuba"];
 }else {
 	$image["Temp"] = $temp["ETC"];
 }
@@ -317,6 +321,8 @@ if (strstr($PLACE_NAME,"石川県")){
 	$image["rain2"] = $gazou["akita"];
 } elseif (strstr($PLACE_NAME,"福岡県")){
 	$image["rain2"] = $gazou["hukuoka"];
+} elseif (strstr($PLACE_NAME,"茨城県")){
+	$image["rain2"] = $gazou["ibaraki"];
 } else {
 	$image["rain2"] = $gazou["tokyo"];
 }
