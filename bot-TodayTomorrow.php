@@ -25,10 +25,8 @@ $SHARP		= $argv[5];
 	$graph["Okinawa"]	= "http://linuxparadise.net/munin/localdomain/localhost.localdomain/power_okinawa-week.png";
 	$graph["Kaigai"] 	= "https://linuxparadise.net/bot-Win7-Image.php";
 
-	$spring["lemon"]	= "https://thanks.linuxparadise.net/uploads/photos/426.jpg";
-	$spring["sakura"]	= "https://thanks.linuxparadise.net/uploads/photos/362.jpg";
-
-	$gazou["nippon"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/000/";
+	$spring["lemon"]	= "https://linuxparadise.net/wp-content/uploads/2021/04/426.jpg";
+	$spring["sakura"]	= "https://linuxparadise.net/wp-content/uploads/2021/04/362.jpg";
 //------------------------------------------------------------------------------
 function file_write($wm){
 
@@ -55,15 +53,7 @@ $TT = new Twitter_Class;
 $WW = new Weather_Class;
 $wm = $WW->openweathermap_forecast();
 
-//$image["rain"] = $WW->rain_yahoo($LAT,$LON,10,600,600
-$target_day = date("Y-m-d H:i");
-$zure = substr(date("i"),1);
-$zure10 = "-".($zure + 10);
-$zure = date("YmdHi",strtotime($target_day . $zure10."minute"));
-foreach ($gazou as $key => $value){
-	$gazou[$key] = $value.$zure."-00.png";
-}
-$image["rain2"] = "https://thanks.linuxparadise.net/uploads/photos/363.jpg";
+$image["rain2"] = "https://linuxparadise.net/wp-content/uploads/2021/04/363.jpg";
 
 if ($wm == NULL) {
 	echo "ERROR";
@@ -137,8 +127,6 @@ if (strstr($PLACE_NAME,"宮城県") || strstr($PLACE_NAME,"新潟県") || strstr
 //		$image["Denryoku"] = $cacti["Hokuriku"];
 		$image["Denryoku"] = $graph["Hokuriku"];
 	}
-} elseif (strstr($PLACE_NAME,"ヘルシンキ") || strstr($PLACE_NAME,"ハワイ") || strstr($PLACE_NAME,"台湾")) {
-	$image["Denryoku"] = $graph["Kaigai"];
 } else {
 	if ($DAYNAME == "TODAY") {
 		$image["Denryoku"] = $graph["Tokyo"];
@@ -168,12 +156,6 @@ if ($DAYNAME == "TODAY") {
         )
         );
 //-------------------------------------------------------------------------
-	if (strstr($PLACE_NAME,"北海道") || strstr($PLACE_NAME,"青森県")) {
-		$image["rain"] = $WW->rain_yahoo($LAT,$LON,10,600,600);
-	//	$image["rain"] = $spring["lemon_tea"];
-	} else {
-		$image["rain"] = $WW->rain_yahoo($LAT,$LON,10,600,600);
-	}
 	$image["icon"] = $wm["weather_icon"];
 	if ($wm["weather_icon"] == NULL) {
 		unset($image["icon"]);

@@ -37,7 +37,7 @@
 
 	$image["memory"]	= "https://linuxparadise.net/zabbix/chart2.php?graphid=534&screenid=22&width=679&height=200&legend=1&profileIdx=web.screens.filter&profileIdx2=22&from=now-7d&to=now&_=tafgnn0a";
 
-	$gazou["kushiro"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/202/";
+/*	$gazou["kushiro"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/202/";
 	$gazou["ishikari"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/203/";
 	$gazou["asahikawa"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/201/";
 	$gazou["aomori"]	= "http://www.jma.go.jp/jp/radnowc/imgs/radar/204/";
@@ -74,7 +74,7 @@
 	foreach ($gazou as $key => $value){
 		$gazou[$key] = $value.$zure."-00.png";
 	}
-
+*/
 function file_write(){
 	extract($GLOBALS);
 	$message  = "現在の".$PLACE_NAME."　\n";
@@ -264,7 +264,7 @@ if (strstr($PLACE_NAME,"伊勢市")){
 }else {
 	$image["Temp"] = $temp["ETC"];
 }
-
+/*
 if (strstr($PLACE_NAME,"石川県")){
 	$image["rain2"] = $gazou["ishikawa"];
 } elseif (strstr($PLACE_NAME,"広島県")){
@@ -326,6 +326,9 @@ if (strstr($PLACE_NAME,"石川県")){
 } else {
 	$image["rain2"] = $gazou["tokyo"];
 }
+*/
+
+$image["rain2"] = "https://www.data.jma.go.jp/obd/stats/data/mdrr/pre_rct/pic/pre24h00.png";
 
 	$image["weather_icon"] = $wm["weather_icon"];
 	if ($wm["weather_icon"] == NULL) {
